@@ -14,12 +14,19 @@ const processingIsFinished = true;
 const reportStatus = processingIsFinished ? 'finished' : 'processing...';
 
 // string literals (added to JavaScript in 2015 with ES6)
-
+// class levels: beginner, intermediate, advanced
+let dataConversionApproved = true;
+let classLevel = 'intermediate';
+const topic = 'JavaScript';
+const topic1 = 'ternary';
+const topic2 = 'data conversion';
+//  const topicLine = topic + ' Basics (' + topic1 + ', ' + topic2 + ')';
+const topicLine = `${topic} Basics (${topic1}${classLevel === 'advanced' && dataConversionApproved ? `, ${topic2}` : ''})`;
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<h2>Basics</h2>
-<p>Report: ${reportStatus}</p>
-<p>Next todo: ${reportStatus === 'finished' ? 'call DHL' : 'wait until report is finished'}</p>
-<p>${reportStatus==='finished'? 'DHL Number: +49 22 22 2 2':'' }</p>
+<h2>${topicLine}</h2>
+  <p>Report: ${reportStatus}</p>
+  <p>Next todo: ${reportStatus === 'finished' ? 'call DHL' : 'wait until report is finished'}</p>
+  <p>${reportStatus==='finished'? 'DHL Number: +49 22 22 2 2':'' }</p>
 `
