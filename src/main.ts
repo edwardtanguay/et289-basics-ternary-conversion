@@ -8,6 +8,17 @@ import './style.css'
 
 // isNAN
 
+// Boolean()
+
+let input = "    ";
+
+if (input.trim() === '') {
+// if (!Boolean(input)) {
+  console.log('please enter value');
+} else {
+  console.log(' you entered ' + input);
+}
+
 // example: STRINGS that come from an HTML form
 const strAccountBalance = "20.9";
 const strDeposit = "10"
@@ -15,15 +26,15 @@ const strDeposit = "10"
 const numAccountBalance = parseFloat(strAccountBalance);
 const numDeposit = Number(strDeposit);
 
-console.log(111, numAccountBalance);
-console.log(222, numDeposit);
+// console.log(111, numAccountBalance);
+// console.log(222, numDeposit);
 
 const newBalance = numAccountBalance + numDeposit;
 
 if (isNaN(numAccountBalance) || isNaN(numDeposit)) {
-  console.log('Please type in numbers in the form.');
+  // console.log('Please type in numbers in the form.');
 } else {
-  console.log('your balance is', newBalance.toFixed(2));
+  // console.log('your balance is', newBalance.toFixed(2));
 }
 
 //XOR
