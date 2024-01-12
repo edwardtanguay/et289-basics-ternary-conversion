@@ -5,6 +5,8 @@ import './style.css'
 // ternary
 // if statement
 
+const classNumber = "302";
+
 const processingIsFinished = false;
 
 // let reportStatus = '';
@@ -27,9 +29,11 @@ const topicLine = `${topic} Basics (${topic1}${classLevel === 'advanced' && data
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+<h1>Class ${classNumber}</h1>
 <h2 style="${classLevel === "beginner" ? 'color: red' : ''}">${topicLine}</h2>
   <p>${classLevel === "intermediate" || classLevel === "advanced"? "Please pickup certifacates at office." : ""}</p>
   <p style="${processingIsFinished ? 'font-weight: bold' : ''}">Report: ${reportStatus}</p>
   <p>Next todo: ${reportStatus === 'finished' ? 'call DHL' : 'wait until report is finished'}</p>
   <p>${reportStatus==='finished'? 'DHL Number: +49 22 22 2 2':'' }</p>
+  <p>Next class will be ${parseInt(classNumber) + 1} </p>
 `
