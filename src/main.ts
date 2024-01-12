@@ -1,4 +1,5 @@
 import './style.css'
+import employees from './data/employees.json';
 
 // type IClassLevel = "beginner" | "intermediate" | "advanced";
 
@@ -78,6 +79,15 @@ const topicLine = `${topic} Basics (${topic1}${classLevel === 'advanced' && data
 
 const nextClassNumber = Number(classNumber) + 1;
 
+const techClass = {
+  name: "JavaScript Basics",
+  teacher: "Hans Schmidt",
+  posterName: function() {
+    return this.name + ' - ' + this.teacher
+  },
+  students: 23,
+}
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <h1>Class ${classNumber}</h1>
 <h2 style="${classLevel === "beginner" ? 'color: red' : ''}">${topicLine}</h2>
@@ -95,5 +105,16 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <hr>
 <p>Account balance: <input/></p>
 <p>deposit: <input/></p>
-
+<hr>
+<p>There are ${employees.length} employees</p>
+<ul>
+  ${employees.map(m => `<li>${m.firstName} ${m.lastName}</li>`).join('')}
+</ul>
+<hr>
+<div>
+<p>${techClass.posterName()}</p>
+<pre>
+${JSON.stringify(techClass, null, 2)}
+</pre>
+</div>
 `
