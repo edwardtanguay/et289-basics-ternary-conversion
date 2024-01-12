@@ -9,10 +9,10 @@ import './style.css'
 // isNAN
 
 // example: STRINGS that come from an HTML form
-const strAccountBalance = "20";
+const strAccountBalance = "20.9";
 const strDeposit = "10"
 
-const numAccountBalance = Number(strAccountBalance);
+const numAccountBalance = parseFloat(strAccountBalance);
 const numDeposit = Number(strDeposit);
 
 console.log(111, numAccountBalance);
@@ -23,7 +23,7 @@ const newBalance = numAccountBalance + numDeposit;
 if (isNaN(numAccountBalance) || isNaN(numDeposit)) {
   console.log('Please type in numbers in the form.');
 } else {
-  console.log('your balance is', newBalance);
+  console.log('your balance is', newBalance.toFixed(2));
 }
 
 //XOR
