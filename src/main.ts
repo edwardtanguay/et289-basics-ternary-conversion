@@ -5,6 +5,27 @@ import './style.css'
 // ternary
 // if statement
 
+
+// isNAN
+
+// example: STRINGS that come from an HTML form
+const strAccountBalance = "20";
+const strDeposit = "10"
+
+const numAccountBalance = Number(strAccountBalance);
+const numDeposit = Number(strDeposit);
+
+console.log(111, numAccountBalance);
+console.log(222, numDeposit);
+
+const newBalance = numAccountBalance + numDeposit;
+
+if (isNaN(numAccountBalance) || isNaN(numDeposit)) {
+  console.log('Please type in numbers in the form.');
+} else {
+  console.log('your balance is', newBalance);
+}
+
 //XOR
 // Wer einen Gutschein hat oder sich zum ersten Mal im Shop anmeldet, kann 10% Rabatt erhalten. Aber nicht gleichzeitig, denn die Rabatte addieren sich nicht. Dann : (isGutschein)XOR(erstAnmeldet)
 const firstTimeCustomer = false;
@@ -60,4 +81,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <hr/>
 <p>Next Class: ${nextClassNumber}</p>
 <p>Next Class Location: ${String(nextClassNumber).startsWith('3') ? 'Silver Building' : 'Gold Building'}</p>
+<hr>
+<p>Account balance: <input/></p>
+<p>deposit: <input/></p>
+
 `
